@@ -1,0 +1,24 @@
+<?php
+echo $this->partial( 'search/search.phtml', array (
+	'oForm' => $this->oForm 
+) );
+?>
+<div id="search" class="search"
+	style="height: 200px; width: 70%; margin: 0 auto; background-color: #FFF; padding: 10px; box-sizing: border-box; -moz-box-sizing: border-box;">
+	<p>
+		<label><?php echo $this->translate( 'Bestemming' ); ?>:</label> <input
+			type="text" name="" id="" value="" size="50" />
+	</p>
+	<p>
+		<label><?php echo $this->translate( 'Country' ); ?>:</label> <select
+			name="">
+			<option value=""><?php echo $this->translate( 'Maak een keuze' ); ?></option>
+		</select>
+	</p>
+	<p>
+		<label><?php echo $this->translate( 'Region' ); ?>:</label> <select
+			name="">
+			<option value=""><?php echo $this->translate( 'Maak een keuze' ); ?></option>
+		</select>
+	</p>
+</div>

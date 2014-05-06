@@ -1,0 +1,53 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+        <?php
+								
+			echo $this	->headTitle( '' )
+						->setSeparator( ' - ' )
+						->setAutoEscape( false );
+			
+			echo $this	->headMeta()
+						->appendName( 'viewport', 'width=device-width, initial-scale=1.0' )
+						->appendHttpEquiv( 'X-UA-Compatible', 'IE=edge' );
+			
+			echo $this	->headScript()
+						->prependFile( $this->basePath () . '/js/common.js' )
+						->prependFile( $this->basePath () . '/js/supersized.shutter.min.js' )
+						->prependFile( $this->basePath () . '/js/supersized.3.2.7.min.js' )
+						->prependFile( $this->basePath () . '/js/jquery.easing.min.js' )
+						->prependFile ( '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' );
+			
+			echo $this	->headLink( array (
+							'rel' => 'shortcut icon',
+							'type' => '',
+							'href' => $this->basePath() . '/img/favicon.ico' 
+						) )
+						->prependStylesheet( $this->basePath() . '/css/style.css' )
+						->prependStylesheet( $this->basePath() . '/css/supersized.css' )
+						->prependStylesheet( $this->basePath () . '/css/supersized.shutter.css' );
+
+		?>
+    </head>
+<body>
+	<div class="top"></div>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li><a href=""><?php echo $this->translate( 'Information' ); ?></a></li>
+				<li><a href=""><?php echo $this->translate( 'Gallery' ); ?></a></li>
+				<li><a href=""><?php echo $this->translate( 'Reviews' ); ?></a></li>
+				<li><a id="m_search" href=""><?php echo $this->translate( 'Search' ); ?></a></li>
+			</ul>
+		</div>
+		<div class="clearer"></div>
+	</div>
+	<?php
+	
+		echo $this->content;
+	
+	?>
+</body>
+</html>

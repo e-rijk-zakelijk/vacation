@@ -1,0 +1,11 @@
+<?php
+
+	$oForm = $this->oForm;
+	$oForm->setAttribute ( 'action', $this->url ( 'application', array (
+		'action' => 'add' 
+	) ) );
+	$oForm->prepare();
+	
+	echo $this->form()->openTag( $oForm );
+	echo $this->formHidden( $oForm->get ( 'countries' ) );
+	echo $this->form()->closeTag();

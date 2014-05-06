@@ -1,0 +1,39 @@
+<?php
+
+	echo $this->partial( 'search/search.phtml', array(
+		'oForm' => $this->oForm 
+	) );
+
+	if( null !== $this->oTravel )
+	{
+		echo '
+			<div style="width: 70%; margin: 34px auto;">
+				<div style="opacity: 0.85; float: left; width: 70%; height: 400px; background-color: #FFF; padding: 10px; box-sizing: border-box; -moz-box-sizing: border-box; position: relative;">
+					<div style="float: left;">
+						<h1 style="font-size: 18px;">' . $this->oTravel->getName() . '</h1>
+					</div>
+					<div style="float: right; padding-top: 3px;">
+						<div style="float: left; width: 50px;">
+							' . $this->translate ( 'Rating' ) . ':
+						</div>
+						<div class="rating" style="float: left;">
+							<img src="http://styleinfluence.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="" title="" />
+							<img src="http://styleinfluence.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="" title="" />
+							<img src="http://styleinfluence.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="" title="" />
+							<img src="http://styleinfluence.net/wp-content/plugins/all-in-one-schemaorg-rich-snippets/images/1star.png" alt="" title="" />
+						</div>
+					</div>
+					<div class="clearer"></div>
+					<p class="itemContent">
+						<img src="' . $this->oTravel->getImgMedium() . '" alt="" title="" />
+						' . $this->oTravel->getDescription() . '
+					</p>
+					<div style="position: absolute; right: 272px; top: 4px; background-image: url( \'http://s3.zon.sunweb.nl.resources-webcontent.com/images/bg-price-badge-big02.png\' ); width: 80px; height: 80px;">
+						<div style="color: #FFF; font-size: 12px; vertical-align: middle; font-weight: bold; padding-top: 28px; text-align: center;">&euro;' . $this->oTravel->getPrice () . '</div>
+					</div>
+				</div>
+				<div style="opacity: 0.85; float: right; width: 28%; height: 400px; background-color: #FFF; padding: 10px; box-sizing: border-box; -moz-box-sizing: border-box;">
+				</div>
+			</div>
+		';
+	}
