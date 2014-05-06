@@ -26,6 +26,12 @@ class Country {
 	private $abbreviation;
 	
 	/**
+	 *
+	 * @var string @ORM\Column(name="name", type="string", length=255, nullable=false)
+	 */
+	private $name;
+	
+	/**
 	 * @ORM\OneToMany(targetEntity="Travel", mappedBy="country")
 	 */
 	private $travels;
@@ -95,4 +101,27 @@ class Country {
 	public function getTravels() {
 		return $this->travels;
 	}
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Country
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

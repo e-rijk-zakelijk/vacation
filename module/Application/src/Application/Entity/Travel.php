@@ -73,6 +73,12 @@
 		private $country;
 		
 		/**
+		 *
+		 * @var integer @ORM\Column(name="nr_of_guests", type="integer", nullable=false)
+		 */
+		private $nrOfGuests;
+		
+		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -271,4 +277,27 @@
 	    {
 	        return $this->city;
 	    }
-	}
+	
+    /**
+     * Set nrOfGuests
+     *
+     * @param integer $nrOfGuests
+     * @return Travel
+     */
+    public function setNrOfGuests($nrOfGuests)
+    {
+        $this->nrOfGuests = $nrOfGuests;
+
+        return $this;
+    }
+
+    /**
+     * Get nrOfGuests
+     *
+     * @return integer 
+     */
+    public function getNrOfGuests()
+    {
+        return $this->nrOfGuests;
+    }
+}

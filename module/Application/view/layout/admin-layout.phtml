@@ -230,17 +230,19 @@
 							</span>
 						</div> <!-- /input-group -->
 					</li>
-					<li><a
-						href="<?php echo $this->url( 'administration', array( 'controller' => 'index' ) ); ?>"><i
-							class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Dashboard' ); ?></a>
+					<li><a href="<?php echo $this->url( 'administration', array( 'controller' => 'index' ) ); ?>">
+						<i class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Dashboard' ); ?></a>
 					</li>
-					<li><a
-						href="<?php echo $this->url( 'administration', array( 'controller' => 'feed' ) ); ?>"><i
-							class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Feed' ); ?></a>
+					<li><a href="<?php echo $this->url( 'administration', array( 'controller' => 'feed' ) ); ?>">
+						<i class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Feed' ); ?></a>
 					</li>
-					<li><a
-						href="<?php echo $this->url( 'administration', array( 'controller' => 'category' ) ); ?>"><i
-							class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Category' ); ?></a>
+					<li>
+						<a href="<?php echo $this->url( 'administration', array( 'controller' => 'country' ) ); ?>">
+						<i class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Country' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo $this->url( 'administration', array( 'controller' => 'category' ) ); ?>">
+						<i class="fa fa-dashboard fa-fw"></i> <?php echo $this->translate( 'Category' ); ?></a>
 					</li>
 				</ul>
 				<!-- /#side-menu -->

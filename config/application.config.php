@@ -8,7 +8,9 @@
 	    	'ZendDeveloperTools',
 	    	'DoctrineModule',
 	    	'DoctrineORMModule',
+			'EdpModuleLayouts',
 	        'Application',
+			'Administration',
 	    ),
 	    'module_listener_options' => array
 		(
