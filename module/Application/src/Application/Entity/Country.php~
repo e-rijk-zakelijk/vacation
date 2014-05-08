@@ -101,4 +101,27 @@ class Country {
 	public function getTravels() {
 		return $this->travels;
 	}
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Country
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

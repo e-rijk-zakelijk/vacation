@@ -10,7 +10,7 @@
 	    	'DoctrineORMModule',
 			'EdpModuleLayouts',
 	        'Application',
-			'Administration',
+// 			'Administration',
 	    ),
 	    'module_listener_options' => array
 		(

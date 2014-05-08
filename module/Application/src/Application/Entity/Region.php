@@ -5,12 +5,12 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Accommodation
+ * Region
  *
- * @ORM\Table(name="accommodation")
+ * @ORM\Table(name="region")
  * @ORM\Entity
  */
-class Accommodation
+class Region
 {
     /**
      * @var integer
@@ -29,25 +29,35 @@ class Accommodation
     private $name;
 
     /**
-     * @var string
+     * Get id
      *
-     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     * @return integer 
      */
-    private $type;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Travel", mappedBy="accommodation")
-     */
-    private $travel;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function getId()
     {
-        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->id;
     }
 
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Region
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }
