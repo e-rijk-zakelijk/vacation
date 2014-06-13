@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Youtube
  *
- * @ORM\Table(name="youtube", uniqueConstraints={@ORM\UniqueConstraint(name="video", columns={"video"})})
+ * @ORM\Table(name="youtube")
  * @ORM\Entity
  */
 class Youtube
@@ -31,7 +31,7 @@ class Youtube
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Travel", mappedBy="youtube", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Travel", mappedBy="youtube")
      */
     private $travel;
 
@@ -42,6 +42,7 @@ class Youtube
     {
         $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
 
     /**
      * Get id

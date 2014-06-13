@@ -9,8 +9,10 @@
 	    	'DoctrineModule',
 	    	'DoctrineORMModule',
 			'EdpModuleLayouts',
+			'SanAuth',
 	        'Application',
 // 			'Administration',
+// 			'Review'
 	    ),
 	    'module_listener_options' => array
 		(

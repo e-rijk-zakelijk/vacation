@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Youtube
  *
- * @ORM\Table(name="youtube", uniqueConstraints={@ORM\UniqueConstraint(name="video", columns={"video"})})
+ * @ORM\Table(name="youtube")
  * @ORM\Entity
  */
 class Youtube
@@ -42,4 +42,5 @@ class Youtube
     {
         $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
 }

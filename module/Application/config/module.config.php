@@ -33,7 +33,7 @@
 							'controller'	=> 'test',
 							'action'		=> 'test' 
 						),
-						'spec' => '/%manufacturer%/%name%' 
+						'spec' => '/%id%/%name%' 
 					),
 					'may_terminate' => true,
 					'child_routes' => array

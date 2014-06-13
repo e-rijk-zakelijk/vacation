@@ -34,5 +34,12 @@
 					)
 				)
 			)
-		)
+		),
+		'view_manager' => array
+		(
+			'template_path_stack' => array
+			(
+				'administration' => __DIR__ . '/../view',
+			),
+		),
 	);

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Travel
  *
- * @ORM\Table(name="travel", indexes={@ORM\Index(name="IDX_2D0B6BCEF92F3E70", columns={"country_id"}), @ORM\Index(name="IDX_2D0B6BCE8BAC62AF", columns={"city_id"})})
+ * @ORM\Table(name="travel", indexes={@ORM\Index(name="IDX_2D0B6BCEF92F3E70", columns={"country_id"}), @ORM\Index(name="IDX_2D0B6BCE8BAC62AF", columns={"city_id"}), @ORM\Index(name="region_id", columns={"region_id"})})
  * @ORM\Entity
  */
 class Travel
@@ -52,7 +52,7 @@ class Travel
     /**
      * @var string
      *
-     * @ORM\Column(name="img_medium", type="string", length=255, nullable=false)
+     * @ORM\Column(name="img_medium", type="string", length=255, nullable=true)
      */
     private $imgMedium;
 
@@ -73,7 +73,7 @@ class Travel
     /**
      * @var integer
      *
-     * @ORM\Column(name="nr_of_guests", type="integer", nullable=false)
+     * @ORM\Column(name="nr_of_guests", type="integer", nullable=true)
      */
     private $nrOfGuests;
 
@@ -86,21 +86,11 @@ class Travel
      * })
      */
     private $city;
-    
-    /**
-     * @var \Region
-     *
-     * @ORM\ManyToOne(targetEntity="Region")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="region_id", referencedColumnName="id")
-     * })
-     */
-    private $region;
 
     /**
      * @var \Country
      *
-     * @ORM\ManyToOne(targetEntity="Country")
+     * @ORM\ManyToOne(targetEntity="Country", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      * })
@@ -108,9 +98,19 @@ class Travel
     private $country;
 
     /**
+     * @var \Region
+     *
+     * @ORM\ManyToOne(targetEntity="Region", cascade={"persist"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     * })
+     */
+    private $region;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Accommodation", inversedBy="travel")
+     * @ORM\ManyToMany(targetEntity="Accommodation", inversedBy="travel", cascade={"persist"})
      * @ORM\JoinTable(name="rel_travel_accommodation",
      *   joinColumns={
      *     @ORM\JoinColumn(name="travel_id", referencedColumnName="id")
@@ -388,6 +388,29 @@ class Travel
     }
 
     /**
+     * Set region
+     *
+     * @param \Application\Entity\Region $region
+     * @return Travel
+     */
+    public function setRegion(\Application\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \Application\Entity\Region 
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
      * Add accommodation
      *
      * @param \Application\Entity\Accommodation $accommodation
@@ -451,28 +474,5 @@ class Travel
     public function getYoutube()
     {
         return $this->youtube;
-    }
-
-    /**
-     * Set region
-     *
-     * @param \Application\Entity\Region $region
-     * @return Travel
-     */
-    public function setRegion(\Application\Entity\Region $region = null)
-    {
-        $this->region = $region;
-
-        return $this;
-    }
-
-    /**
-     * Get region
-     *
-     * @return \Application\Entity\Region 
-     */
-    public function getRegion()
-    {
-        return $this->region;
     }
 }

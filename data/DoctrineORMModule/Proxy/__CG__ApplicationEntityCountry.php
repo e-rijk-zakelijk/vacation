@@ -64,10 +64,10 @@ class Country extends \Application\Entity\Country implements \Doctrine\ORM\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'abbreviation', 'name', 'travels');
+            return array('__isInitialized__', 'id', 'abbreviation', 'name');
         }
 
-        return array('__isInitialized__', 'id', 'abbreviation', 'name', 'travels');
+        return array('__isInitialized__', 'id', 'abbreviation', 'name');
     }
 
     /**
@@ -208,39 +208,6 @@ class Country extends \Application\Entity\Country implements \Doctrine\ORM\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAbbreviation', array());
 
         return parent::getAbbreviation();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addTravel(\Application\Entity\Travel $travels)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addTravel', array($travels));
-
-        return parent::addTravel($travels);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeTravel(\Application\Entity\Travel $travels)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeTravel', array($travels));
-
-        return parent::removeTravel($travels);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getTravels()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTravels', array());
-
-        return parent::getTravels();
     }
 
     /**

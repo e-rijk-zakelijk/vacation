@@ -1,0 +1,21 @@
+<?php
+
+	echo $this->headtitle( $this->translate( 'review_add' ) );
+	
+	$oForm = $this->oForm;
+	$oForm->setAttribute
+	(
+		'action', $this->url
+		(
+			'review',
+			array
+			(
+				'action' => 'add'
+			)
+		)
+	);
+	$oForm->prepare();
+	
+	echo $this->form()->openTag( $oForm );
+	echo $this->formCollection( $oForm );
+	echo $this->form()->closeTag();

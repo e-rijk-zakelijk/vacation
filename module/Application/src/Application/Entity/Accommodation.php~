@@ -31,7 +31,7 @@ class Accommodation
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 

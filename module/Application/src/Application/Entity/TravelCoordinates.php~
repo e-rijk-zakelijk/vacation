@@ -1,0 +1,42 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TravelCoordinates
+ *
+ * @ORM\Table(name="travel_coordinates")
+ * @ORM\Entity
+ */
+class TravelCoordinates
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="latitude", type="string", length=255, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="longitude", type="string", length=255, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var \Travel
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Travel")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="travel_id", referencedColumnName="id")
+     * })
+     */
+    private $travel;
+
+
+}
